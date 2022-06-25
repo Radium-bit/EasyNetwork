@@ -1,0 +1,2 @@
+D:\MyProject\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
+D:\MyProject\Easy Network Control\x64\Debug\EasyNetwork.exe

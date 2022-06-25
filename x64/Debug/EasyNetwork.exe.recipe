@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\MyProject\Easy Network Control\x64\Debug\EasyNetwork.exe</FullPath>
+      <FullPath>D:\Github\EasyNetwork\x64\Debug\EasyNetwork.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -1,6 +1,1 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(ConsoleApplication1.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  EasyNetwork.c
-D:\MyProject\Easy Network Control\EasyNetwork.c(79): warning C4715: “FWC”: 不是所有的控件路径都返回值
-D:\MyProject\Easy Network Control\EasyNetwork.c(96): warning C4715: “AboutHosts”: 不是所有的控件路径都返回值
-D:\MyProject\Easy Network Control\EasyNetwork.c(58): warning C4715: “Choice”: 不是所有的控件路径都返回值
-  ConsoleApplication1.vcxproj -> D:\MyProject\Easy Network Control\x64\Debug\EasyNetwork.exe
+﻿

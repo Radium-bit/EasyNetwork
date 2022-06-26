@@ -96,8 +96,8 @@ int AboutHosts() {     //Hosts Modify part
 }
 // Network Cofing Reset
 int resetNetwork() {
-	;
-	return 2;
+	system("netsh winsock reset");
+	return 0;
 }
 //Local Security gpedit panel
 int SecurityControl() {
@@ -114,12 +114,16 @@ int Crtmgr() {
 }
 // Firewall Control Part
 int OnFirewall() {
-	;
-	return 2;
+	system("netsh advfirewall set allprofiles state on");
+	printf("Windows防火墙已开启");
+	system("pause");
+	return 0;
 }
 int OffFirewall() {
-	;
-	return 2;
+	system("netsh advfirewall set allprofiles state off");
+	system("Windows防火墙已关闭");
+	system("pause");
+	return 0;
 }
 int AdvancedFW() {
 	system("control.exe /name Microsoft.WindowsFirewall");
@@ -135,8 +139,14 @@ int resetHosts() {
 	return 2;
 }
 int backupHosts() {
-	;
-	return 2;
+	return 2; //未开放
+	char *path,str[50],command[100];
+	path = str;
+	printf("请输入想要备份Hosts文件到的路径。");
+	printf("例如：C:\\Users\\Public\n");
+	scanf("%s", path);
+	sprintf(command, "echo %%hsystemroot%%h/system32/drivers/etc/hosts %s",str);
+	return 0;
 }
 //About Project
 int AboutProject() {

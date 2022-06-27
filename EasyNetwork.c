@@ -77,7 +77,7 @@ int FWC() {  //Firewall Control Submenu
 		break;
 	}
 }
-int AboutHosts() {     //Hosts Modify part
+int AboutHosts() {     //Hosts Modify Submenu
 	int ch;
 	int OpenHFile(), resetHosts(), backupHosts();
 	system("cls");
@@ -135,17 +135,17 @@ int OpenHFile() {
 	return 0;
 }
 int resetHosts() {
-	;
 	return 2;
 }
 int backupHosts() {
-	return 2; //未开放
+	//return 2; //未开放
 	char *path,str[50],command[100];
 	path = str;
 	printf("请输入想要备份Hosts文件到的路径。");
 	printf("例如：C:\\Users\\Public\n");
 	scanf("%s", path);
-	sprintf(command, "echo %%hsystemroot%%h/system32/drivers/etc/hosts %s",str);
+	sprintf(command, "copy C:\\Windows\\System32\\drivers\\etc\\hosts %s",str);
+	system(command);
 	return 0;
 }
 //About Project

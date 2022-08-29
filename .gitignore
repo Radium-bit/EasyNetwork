@@ -360,3 +360,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.log
+.vs/EasyNetwork/v17/.suo
+x64/Debug/ConsoleApplication1.vcxproj.FileListAbsolute.txt
+.vs/EasyNetwork/v17/Browse.VC.db

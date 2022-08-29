@@ -132,6 +132,7 @@
     <ClCompile Include="AdminCheck.c" />
     <ClCompile Include="EasyNetwork.c" />
     <ClCompile Include="func.c" />
+    <ClCompile Include="ResultCheck.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

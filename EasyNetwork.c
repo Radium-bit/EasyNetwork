@@ -6,18 +6,11 @@
 int main() {
 	int x;
 	x = 0;
-	int Hello(), Guide(), Choice(), PermissionCheck();
+	int Hello(), Guide(), Choice(), PermissionCheck(),ResultCheck();
 	Hello();
 	PermissionCheck();
 	Guide();
-	x = Choice(); //执行选择并检测返回值
-	if (x == 2) {
-		system("cls"); printf("\033[47;31mError! 功能尚未支持，Debugcode 0x0002\033[0m");
-	}
-	else if (x == 1) {  //else if 和 if 需要加上括号
-		system("cls"); printf("\033[47;31mError! 输入错误或已退出！,Debugcode 0x0001\033[0m");
-	}
-	else
+	ResultCheck();
 	return 0;
 }
 int Hello() {
@@ -46,12 +39,12 @@ int Choice() {
 	ch = getchar();
 	switch(ch) 
 	{
-	case '1':clearDNS(); return 0; break;
+	case '1':clearDNS();break;
 	case '2':resetNetwork(); /*return 0 */ ; break;
-	case '3':FWC(); return 0; break; //Jump to Firewall Control
-	case '4':SecurityControl(); return 0; break; // Jump to Local Security gpedit
-	case '5':NetworkManager(); return 0; break;
-	case '6':Crtmgr(); return 0; break;
+	case '3':FWC(); break; //Jump to Firewall Control
+	case '4':SecurityControl(); break; // Jump to Local Security gpedit
+	case '5':NetworkManager(); break;
+	case '6':Crtmgr(); break;
 	case '7':AboutHosts(); break;
 	case '8':AboutProject(); break;
 	default: return 0;

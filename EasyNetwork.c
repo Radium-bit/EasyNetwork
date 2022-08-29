@@ -6,15 +6,16 @@
 int main() {
 	int x;
 	x = 0;
-	int Hello(), Guide(), Choice();
+	int Hello(), Guide(), Choice(), PermissionCheck();
 	Hello();
+	PermissionCheck();
 	Guide();
 	x = Choice(); //执行选择并检测返回值
 	if (x == 2) {
 		system("cls"); printf("\033[47;31mError! 功能尚未支持，Debugcode 0x0002\033[0m");
 	}
 	else if (x == 1) {  //else if 和 if 需要加上括号
-		system("cls"); printf("\033[47;31mError! 输入错误！,Debugcode 0x0001\033[0m");
+		system("cls"); printf("\033[47;31mError! 输入错误或已退出！,Debugcode 0x0001\033[0m");
 	}
 	else
 	return 0;
@@ -35,7 +36,7 @@ int Guide() {
 	printf("1. 清除DNS缓存\t\t2. 重置网络设定\n\n3. 防火墙设定\t\t");
 	printf("4. 打开安全策略\n\n5. 打开网卡适配器面板\t6. 打开证书面板\n\n");
 	printf("7. Hosts文件相关\t8. 关于本项目\n\n");
-	printf("按空格键退出\n");
+	printf("不输入按空格或任意键退出，输入后请回车确认\n");
 	return 0;
 }
 
@@ -53,7 +54,7 @@ int Choice() {
 	case '6':Crtmgr(); return 0; break;
 	case '7':AboutHosts(); break;
 	case '8':AboutProject(); break;
-	default: return 1; // Value "1" Means Type Error
+	default: return 0;
 	}
 }
 int clearDNS() {
@@ -93,63 +94,4 @@ int AboutHosts() {     //Hosts Modify Submenu
 	default: return 1;
 		break;
 	}
-}
-// Network Cofing Reset
-int resetNetwork() {
-	system("netsh winsock reset");
-	return 0;
-}
-//Local Security gpedit panel
-int SecurityControl() {
-	system("secpol.msc");
-	return 0;
-}
-int NetworkManager() {
-	system("ncpa.cpl");
-	return 0;
-}
-int Crtmgr() {
-	system("certmgr.msc");
-	return 0;
-}
-// Firewall Control Part
-int OnFirewall() {
-	system("netsh advfirewall set allprofiles state on");
-	printf("Windows防火墙已开启");
-	system("pause");
-	return 0;
-}
-int OffFirewall() {
-	system("netsh advfirewall set allprofiles state off");
-	system("Windows防火墙已关闭");
-	system("pause");
-	return 0;
-}
-int AdvancedFW() {
-	system("control.exe /name Microsoft.WindowsFirewall");
-	return 0;
-}
-//Hosts Modify part
-int OpenHFile() {
-	system("notepad %systemroot%/system32/drivers/etc/hosts");
-	return 0;
-}
-int resetHosts() {
-	return 2;
-}
-int backupHosts() {
-	//return 2; //未开放
-	char *path,str[50],command[100];
-	path = str;
-	printf("请输入想要备份Hosts文件到的路径。");
-	printf("例如：C:\\Users\\Public\n");
-	scanf("%s", path);
-	sprintf(command, "copy C:\\Windows\\System32\\drivers\\etc\\hosts %s",str);
-	system(command);
-	return 0;
-}
-//About Project
-int AboutProject() {
-	system("start https://github.com/Radium-bit/EasyNetwork");
-	return 0;
 }

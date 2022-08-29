@@ -18,5 +18,14 @@
     <ClCompile Include="EasyNetwork.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="about.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="func.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminCheck.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

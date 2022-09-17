@@ -55,3 +55,6 @@ int backupHosts() {
 	system(command);
 	return 0;
 }
+int AboutProject() {
+	system("start https://github.com/Radium-bit/EasyNetwork");
+}
